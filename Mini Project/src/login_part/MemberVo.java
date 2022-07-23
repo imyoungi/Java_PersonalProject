@@ -1,10 +1,9 @@
 package login_part;
 
-
 public class MemberVo {
 	private String id;
 	private String password;
-	private String deptcode;
+
 
 	public MemberVo() {
 
@@ -13,7 +12,7 @@ public class MemberVo {
 	public MemberVo(String id, String password, String deptcode) {
 		this.id = id;
 		this.password = password;
-		this.deptcode = deptcode;
+
 	}
 
 	public String getId() {
@@ -23,8 +22,5 @@ public class MemberVo {
 	public String getPassword() {
 		return password;
 	}
-	
-	public String getDeptCode() {
-		return deptcode;
-	}
+
 }

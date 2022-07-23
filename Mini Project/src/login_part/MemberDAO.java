@@ -7,6 +7,7 @@ public class MemberDAO {
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	String user = "c##green";
 	String password = "green1234";
+
 	
 	private Connection con;
 	private Statement stmt;
@@ -17,8 +18,7 @@ public class MemberDAO {
 			connDB();
 			
 			String query = "SELECT * FROM login WHERE id='" + p.getId()
-			+ "'password='" + p.getPassword() +
-					"'AND deptcode='" + p.getDeptCode() + "'";
+			+ "'password='" + p.getPassword();
 			System.out.println("SQL : " + query);
 			rs = stmt.executeQuery(query);
 			rs.last();
