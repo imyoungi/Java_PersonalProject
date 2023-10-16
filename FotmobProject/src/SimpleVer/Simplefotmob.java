@@ -14,6 +14,7 @@ public class Simplefotmob {
 
 	public static void main(String[] args) {
 		Eplinfo pl = new Eplinfo();
+		Laligainfo laliga = new Laligainfo();
 		System.out.println("- SIMPLE FOTMOB PROGRAM -" + "\r\n");
 
 		while (true) {
@@ -85,45 +86,59 @@ public class Simplefotmob {
 				break;
 
 			case 2:
-				HashMap<Integer, String> laliga = new HashMap<>();
-				laliga.put(1, "레알 마드리드");//
-				laliga.put(2, "지로나 FC");
-				laliga.put(3, "FC 바르셀로나");//
-				laliga.put(4, "클루브 아틀레티코 데 마드리드");//
-				laliga.put(5, "아틀레틱 클루브");
-				laliga.put(6, "카디스 CF");
-				laliga.put(7, "레알 베티스 발롬피에");
-				laliga.put(8, "레알 소시에다드");
-				laliga.put(9, "CA 오사수나");
-				laliga.put(10, "데포르티보 알라베스");
-				laliga.put(11, "발렌시아 CF");
-				laliga.put(12, "라요 바예카노");
-				laliga.put(13, "RC 셀타 데 비고");
-				laliga.put(14, "헤타페 CF");
-				laliga.put(15, "비야레알 CF");
-				laliga.put(16, "그라나다 CF");
-				laliga.put(17, "RCD 마요르카");
-				laliga.put(18, "UD 라스팔마스");
-				laliga.put(19, "UD 알메리아");
-				laliga.put(20, "세비야 FC");
+				DetailInfo[] detail_laliga = new DetailInfo[20];
+				System.out.println("객체배열 개수 :" + detail_laliga.length);
+				int play_laliga = pl.epl_makeplay();
 
-//			laliga.forEach((key, value) -> {
-//				System.out.println(key + " : " + value);
-//			});
+				for (int i = 0; i < detail_laliga.length; i++) {
+					detail_laliga[i] = new DetailInfo(); // 객체배열 생성
 
-				System.out.println("팀을 선택하세요!");
-				teamnum = sc.nextInt();
-
-				if (teamnum > 22) {
-					System.out.println("잘못 선택하셨습니다. 다시 선택해주세요");
-					teamnum = sc.nextInt();
-					System.out.print("selected " + laliga.get(teamnum));
-				} else {
-					System.out.print("selected " + laliga.get(teamnum));
-					teamnum += 4;
-					System.out.println(teamnum);
-//					
 				}
+
+				for (int i = 0; i < detail_laliga.length; i++) {
+					detail_laliga[i].name = laliga.Teams[i];
+					detail_laliga[i].coach = laliga.Coach[i];
+					detail_laliga[i].hometown = laliga.Hometown[i];
+					detail_laliga[i].previousrank = laliga.PreviousRank[i];
+					detail_laliga[i].play = play_laliga;
+					detail_laliga[i].point = pl.epl_makescore(play_laliga);
+					detail_laliga[i].mompoint = pl.makeMomPoint();
+					detail_laliga[i].bestplayer = laliga.bestplayer[i];
+//				System.out.println(detail[i].allContent());
+				}
+
+				int countRank1 = 0;
+				List<DetailInfo> ToSort1 = Arrays.asList(detail_laliga);
+				Collections.sort(ToSort1);
+
+				for (DetailInfo i : ToSort1) {
+					countRank1++;
+					System.out.println(countRank1 + "위 " + i + " ");
+				}
+				System.out.println();
+
+				for (int i = 0; i < detail_laliga.length; i++) {
+					System.out.println(i + 1 + " : " + detail_laliga[i].name);
+				}
+
+				while (true) {
+					System.out.println();
+					System.out.println("팀을 선택하세요![종료:0 / 리그선택:77]");
+					teamnum = sc.nextInt();
+
+					if (teamnum > 0 && teamnum < 21) {
+						System.out.print("selected " + detail_laliga[teamnum - 1].name + "\r\n");
+						System.out.println(detail_laliga[teamnum - 1].allContent());
+					} else if (teamnum == 0) {
+						sc.close();
+						return;
+					} else if (teamnum == 77) {
+						break;
+
+					} else
+						System.out.println("다시 입력하세요");
+				}
+
 				break;
 
 //			
