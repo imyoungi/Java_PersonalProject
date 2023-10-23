@@ -19,7 +19,7 @@ public class JdbcTemplate {
 	}
 
 	public Connection getConnection() {
-		String user = "admin";
+		String user = "본인아이디";
 		String password = "본인패스워드";
 		String jdbcurl = "url";
 		Connection conn = null;
