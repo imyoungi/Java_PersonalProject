@@ -20,8 +20,8 @@ public class JdbcTemplate {
 
 	public Connection getConnection() {
 		String user = "admin";
-		String password = "GkdudRkddls1419!!";
-		String jdbcurl = "jdbc:oracle:thin:@k44pt3du0dcrpdba_high?TNS_ADMIN=/Users/user/Downloads/Wallet_K44PT3DU0DCRPDBA";
+		String password = "본인패스워드";
+		String jdbcurl = "url";
 		Connection conn = null;
 
 //		try {
