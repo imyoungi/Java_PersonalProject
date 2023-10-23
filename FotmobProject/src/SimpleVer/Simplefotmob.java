@@ -48,7 +48,7 @@ public class Simplefotmob {
 					detail[i].point = pl.epl_makescore(play);
 					detail[i].mompoint = pl.makeMomPoint();
 					detail[i].bestplayer = Eplinfo.bestplayer[i];
-//				System.out.println(detail[i].allContent());
+					System.out.println(detail[i].allContent());
 				}
 
 				int countRank = 0;

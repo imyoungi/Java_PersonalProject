@@ -1,4 +1,4 @@
-package DatabaseConVer;
+package DatabaseConnVer;
 
 class time {
 	private int hour;

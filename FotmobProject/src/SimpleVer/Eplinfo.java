@@ -8,7 +8,7 @@ public class Eplinfo {
 	DetailInfo detail = new DetailInfo();
 	Simplefotmob simplefm = new Simplefotmob();
 
-	double makeMomPoint() {
+	public double makeMomPoint() {
 		float point = (float) Math.random() * 5 + 6;
 		double mompoint = Math.round(point * 100) / 100.0;
 		if (mompoint > 10.0) {
@@ -23,7 +23,7 @@ public class Eplinfo {
 		return play;
 	}
 
-	int epl_makescore(int play) { // 승리(3), 무승부(1), 패(0)
+	public int epl_makescore(int play) { // 승리(3), 무승부(1), 패(0)
 		int count = 0;
 
 		for (int i = 0; i < play; i++) {
@@ -46,20 +46,20 @@ public class Eplinfo {
 	}
 
 
-	static String[] EplTeams = { "Mancity", "Tottenham", "Arsenal", "West Ham United", "Liverpool",
+	public static String[] EplTeams = { "Mancity", "Tottenham", "Arsenal", "West Ham United", "Liverpool",
 			"Brighton & Hove Albion", "Crystal Palace", "Brentford", "Nottingham Forest", "Aston Villa",
 			"Manchester United", "Chelsea", "Fulham", "Newcastle United", "Wolves", "AFC Bournemouth",
 			"Sheffield United", "Everton", "Luton Town", "Burnley" };
 
-	static String[] EplCoach = { "펩 과르디올라", "엔제 포스테코글루", "미켈 아르테타", "데이비드 모이스", "위르겐 클롭", "로베르토 데 제르비", "호지슨 로이",
+	public static String[] EplCoach = { "펩 과르디올라", "엔제 포스테코글루", "미켈 아르테타", "데이비드 모이스", "위르겐 클롭", "로베르토 데 제르비", "호지슨 로이",
 			"토마스 프랑크", "스티브 쿠퍼", "우나이 에메리", "에릭 텐 하흐", "마우리시오 포체티노", "마르쿠 실바", "에디 하우", "게리오닐", "안도니 이라올라", "폴 헤킹버텀",
 			"숀 다이치", "롭 에드워드", "뱅상 콤파니" };
 
-	static String[] EplHometown = { "Etihad Stadium", "Tottenhamhotspur Stadium", "Emirates Stadium", "London Stadium",
+	public static String[] EplHometown = { "Etihad Stadium", "Tottenhamhotspur Stadium", "Emirates Stadium", "London Stadium",
 			"Anfield", "팔머 스타디움", "Selhurst Park Stadium", "브렌트퍼드 커뮤니티 스타디움", "시티 그라운드", "빌라 파크", "올드 트래퍼드", "스탬퍼드 브리지",
 			"크레이븐 코티지", "세인트 제임스 파크", "Molineux Stadium", "바이탈리티 스타디움", "브래몰 레인", "구디슨 파크", "케닐워스 로드", "터프 무어" };
 
-	static String[] EplPreviousRank = { "1", "8", "2", "14", "5", "6", "11", "9", "16", "14", "3", "12", "10", "4",
+	public static String[] EplPreviousRank = { "1", "8", "2", "14", "5", "6", "11", "9", "16", "14", "3", "12", "10", "4",
 			"13", "15", "EFL 챔피언십 2위 (승격)", "17", "EFL 챔피언십 3위 (승격)", "EFL 챔피언십 1위 (승격)" };
 
 	static String[] Member_Mancity = { "카일 워커", "후벵 디아스", "캘빈 필립스", "존 스톤스", "나단 아케", "마테오 코바치치", "엘링 홀란드", "잭 그릴리시",
@@ -154,7 +154,7 @@ public class Eplinfo {
 			"야콥 브룬 라르센 ", "아네스 델크루아", "마이클 오바페미", "윌송 오도베르", "아리야네트 무리치", "한노아 마셍고", "마이크 트레소르 은다이시미예 " };
 
 	
-	static String[] bestplayer = {
+	public static String[] bestplayer = {
 			Member_Mancity[random.nextInt(Member_Mancity.length)],
 			Member_Tottenham[random.nextInt(Member_Tottenham.length)],
 			Member_Arsenal[random.nextInt(Member_Arsenal.length)],

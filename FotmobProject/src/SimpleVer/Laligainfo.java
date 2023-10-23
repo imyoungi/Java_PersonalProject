@@ -8,20 +8,20 @@ public class Laligainfo {
 	DetailInfo detail_laliga = new DetailInfo();
 	Simplefotmob simplefm = new Simplefotmob();
 
-	String[] Teams = { "REAL MADRID", "GIRONA FC", "FC BARCELONA", "ATLÉTICO DE MADRID", "ATHLETIC CLUB",
+	public String[] Teams = { "REAL MADRID", "GIRONA FC", "FC BARCELONA", "ATLÉTICO DE MADRID", "ATHLETIC CLUB",
 			"REAL SOCIEDAD", "REAL BETIS", "RAYO VALLECANO", "VALENCIA CF", "UD LAS PALMAS", "GETAFE CF", "CA OSASUNA",
 			"CÁDIZ CF", "SEVILLA FC", "RCD MALLORCA", "VILLARREAL CF", "DEPORTIVO ALAVÉS", "RC CELTA", "GRANADA CF",
 			"UD ALMERÍA" };
 
-	String[] Coach = { "카를로 안첼로티", "미첼 산체스", "사비 에르난데스", "디에고 시메오네", "에르네스토 발베르데", "이마놀 알과실", "마누엘펠레그리니",
+	public String[] Coach = { "카를로 안첼로티", "미첼 산체스", "사비 에르난데스", "디에고 시메오네", "에르네스토 발베르데", "이마놀 알과실", "마누엘펠레그리니",
 			"프란시스코 로드리게스 빌체스", "루벤 바라하", "가르시아피미엔타", "호세 보르달라스", "하고바아라사테", "세르히오곤살레스", "디에고 알론소", "하비에르 아기레",
 			"호세 로호파체타", "루이스 가르시아", "라파엘 베니테스", "파코로페스", "가이스카가리타노" };
 
-	String[] Hometown = { "에스타디오 산티아고 베르나베우", "에스타디 무니시팔 데 몬틸리비", "스포티파이 캄 노우", "시비타스 메트로폴리타노", "에스타디오 산 마메스",
+	public String[] Hometown = { "에스타디오 산티아고 베르나베우", "에스타디 무니시팔 데 몬틸리비", "스포티파이 캄 노우", "시비타스 메트로폴리타노", "에스타디오 산 마메스",
 			"레알레 아레나", "에스타디오 베니토 비야마린", "캄포 데 풋볼 데 바예카스", "에스타디오 데 메스타야", "에스타디오 그란 카나리아", "에스타디오 콜리세움 알폰소 페레스",
 			"에스타디오 엘 사다르", "에스타디오 누에보 미란디야", "라몬 산체스 피스후안", "에스타디 마요르카 손 모시", "호세 로호파체타", "루이스가르시아", "라파엘베니테스", "파코로페스",
 			"파워 홀스 스타디움" };
-	String[] PreviousRank = { "2", "10", "1", "3", "8", "4", "6", "11", "16", "1부승격(2위)", "15", "7", "14", "12",
+	public String[] PreviousRank = { "2", "10", "1", "3", "8", "4", "6", "11", "16", "1부승격(2위)", "15", "7", "14", "12",
 			"9", "5", "1부승격(4위)", "13", "1부승격(1위)", "17" };
 
 	String[] Member_Realmadrid = { "티보 쿠르투아", "케파 아리사발라가", "안드리 루닌", "데이비드 알라바", "나초 페르난데스", "안토니오 뤼디거", "다니엘 카르바할",
@@ -93,7 +93,7 @@ public class Laligainfo {
 			"미켈 메리노", "카를로스 페르난데스", "미켈 오야르사발", "모하메드알리 초", "아르센 자하랸", "쿠보 타케후사", "욘 올라사가스티", "키어런 티어니", "아마리 트라오레",
 			"우마르 사디크", "욘 파체코", "안드레 실바", "베냐트 투리엔테스", "브라이스 멘데스", "로뱅 르노르망", "우르코 곤잘레스 데 사라테", "파블로 마린", "우나이 마레로", };
 
-	String[] bestplayer = { 
+	public String[] bestplayer = { 
 			Member_Realmadrid[random.nextInt(Member_Realmadrid.length)],
 			Member_GIRONA[random.nextInt(Member_GIRONA.length)],
 			Member_Barcelona[random.nextInt(Member_Barcelona.length)],
