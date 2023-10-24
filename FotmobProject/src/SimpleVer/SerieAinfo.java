@@ -2,7 +2,7 @@ package SimpleVer;
 
 import java.util.Random;
 
-public class SerieA {
+public class SerieAinfo {
 	static Random random = new Random();
 	DetailInfo detail_serie = new DetailInfo();
 	Simplefotmob simplefm = new Simplefotmob();
@@ -128,13 +128,14 @@ public class SerieA {
 			Member_Bologna[random.nextInt(Member_Bologna.length)],
 			Member_Sassuolo[random.nextInt(Member_Sassuolo.length)],
 			Member_Salernitana[random.nextInt(Member_Salernitana.length)],
-			Member_Juventus[random.nextInt(Member_Juventus.length)],
 			Member_Atalanta[random.nextInt(Member_Atalanta.length)],
 			Member_Empoli[random.nextInt(Member_Empoli.length)], 
 			Member_Udinese[random.nextInt(Member_Udinese.length)],
+			Member_Juventus[random.nextInt(Member_Juventus.length)],
 			Member_Internazionale[random.nextInt(Member_Internazionale.length)],
 			Member_Genoa[random.nextInt(Member_Genoa.length)], 
 			Member_Cagliari[random.nextInt(Member_Cagliari.length)],
 			Member_Torino[random.nextInt(Member_Torino.length)],
-			Member_Frosinone[random.nextInt(Member_Frosinone.length)], };
+			Member_Frosinone[random.nextInt(Member_Frosinone.length)],
+			Member_Fiorentina[random.nextInt(Member_Fiorentina.length)]};
 }

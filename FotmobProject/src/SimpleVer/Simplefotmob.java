@@ -13,13 +13,17 @@ public class Simplefotmob {
 	static HashMap<Integer, String> map = new HashMap<>();
 
 	public static void main(String[] args) {
-		Eplinfo pl = new Eplinfo();
+		Eplinfo epl = new Eplinfo();
 		Laligainfo laliga = new Laligainfo();
+		Bundesinfo bundes = new Bundesinfo();
+		SerieAinfo serie = new SerieAinfo();
+		Ligue1info ligue1 = new Ligue1info();
+
 		System.out.println("- SIMPLE FOTMOB PROGRAM -" + "\r\n");
 
 		while (true) {
 			System.out.println("리그를 선택하세요[종료:0]" + "\r\n");
-			pl.selectMenu();
+			epl.selectMenu();
 
 			Scanner sc = new Scanner(System.in);
 			menunum = sc.nextInt();
@@ -32,7 +36,7 @@ public class Simplefotmob {
 			case 1:
 				DetailInfo[] detail = new DetailInfo[20];
 				System.out.println("객체배열 개수 :" + detail.length);
-				int play = pl.epl_makeplay();
+//				int play = epl.makeplay();
 
 				for (int i = 0; i < detail.length; i++) {
 					detail[i] = new DetailInfo(); // 객체배열 생성
@@ -44,20 +48,19 @@ public class Simplefotmob {
 					detail[i].coach = Eplinfo.EplCoach[i];
 					detail[i].hometown = Eplinfo.EplHometown[i];
 					detail[i].previousrank = Eplinfo.EplPreviousRank[i];
-					detail[i].play = play;
-					detail[i].point = pl.epl_makescore(play);
-					detail[i].mompoint = pl.makeMomPoint();
+					detail[i].play = epl.makeplay();
+					detail[i].point = epl.makescore(detail[i].play);
+					detail[i].mompoint = epl.makeMomPoint();
 					detail[i].bestplayer = Eplinfo.bestplayer[i];
-					System.out.println(detail[i].allContent());
 				}
 
-				int countRank = 0;
+				int eplConut = 0;
 				List<DetailInfo> ToSort = Arrays.asList(detail);
 				Collections.sort(ToSort);
 
 				for (DetailInfo i : ToSort) {
-					countRank++;
-					System.out.println(countRank + "위 " + i + " ");
+					eplConut++;
+					System.out.println(eplConut + "위 " + i + " ");
 				}
 				System.out.println();
 
@@ -88,7 +91,7 @@ public class Simplefotmob {
 			case 2:
 				DetailInfo[] detail_laliga = new DetailInfo[20];
 				System.out.println("객체배열 개수 :" + detail_laliga.length);
-				int play_laliga = pl.epl_makeplay();
+//				int play_laliga = epl.makeplay();
 
 				for (int i = 0; i < detail_laliga.length; i++) {
 					detail_laliga[i] = new DetailInfo(); // 객체배열 생성
@@ -100,20 +103,20 @@ public class Simplefotmob {
 					detail_laliga[i].coach = laliga.Coach[i];
 					detail_laliga[i].hometown = laliga.Hometown[i];
 					detail_laliga[i].previousrank = laliga.PreviousRank[i];
-					detail_laliga[i].play = play_laliga;
-					detail_laliga[i].point = pl.epl_makescore(play_laliga);
-					detail_laliga[i].mompoint = pl.makeMomPoint();
+					detail_laliga[i].play = epl.makeplay();
+					detail_laliga[i].point = epl.makescore(detail_laliga[i].play);
+					detail_laliga[i].mompoint = epl.makeMomPoint();
 					detail_laliga[i].bestplayer = laliga.bestplayer[i];
 //				System.out.println(detail[i].allContent());
 				}
 
-				int countRank1 = 0;
+				int laligaCount = 0;
 				List<DetailInfo> ToSort1 = Arrays.asList(detail_laliga);
 				Collections.sort(ToSort1);
 
 				for (DetailInfo i : ToSort1) {
-					countRank1++;
-					System.out.println(countRank1 + "위 " + i + " ");
+					laligaCount++;
+					System.out.println(laligaCount + "위 " + i + " ");
 				}
 				System.out.println();
 
@@ -143,127 +146,157 @@ public class Simplefotmob {
 
 //			
 			case 3:
-				HashMap<Integer, String> bundes = new HashMap<>();
-				bundes.put(1, "FC 바이에른 뮌헨");//
-				bundes.put(2, "VfB 슈투트가르트");
-				bundes.put(3, "RB 라이프치히");
-				bundes.put(4, "FC 우니온 베를린");
-				bundes.put(5, "TSG 1899 호펜하임");
-				bundes.put(6, "VfL 볼프스부르크");
-				bundes.put(7, "SC 프라이부르크");
-				bundes.put(8, "보루시아 도르트문트");
-				bundes.put(9, "아인트라흐트 프랑크푸르트");
-				bundes.put(10, "SV 베르더 브레멘");
-				bundes.put(11, "FC 아우크스부르크");
-				bundes.put(12, "VfL 보훔");
-				bundes.put(13, "FC 쾰른");
-				bundes.put(14, "FC 하이덴하임");
-				bundes.put(15, "보루시아 묀헨글라트바흐");
-				bundes.put(16, "FSV 마인츠 05");//
-				bundes.put(17, "다름슈타트");
-//
-//			bundes.forEach((key, value) -> {
-//				System.out.println(key + " : " + value);
-//			});
-				System.out.println();
-				System.out.println("팀을 선택하세요!");
-				System.out.println();
-				System.out.println("팀을 선택하세요!");
-				teamnum = sc.nextInt();
-				if (teamnum > 17) {
-					System.out.println("잘못 선택하셨습니다. 다시 선택해주세요");
-					teamnum = sc.nextInt();
-					System.out.print("selected " + bundes.get(teamnum));
-				} else {
-					System.out.print("selected " + bundes.get(teamnum));
+				DetailInfo[] detail_bundes = new DetailInfo[18];
+//				System.out.println(detail_bundes.length);
+				for (int i = 0; i < detail_bundes.length; i++) {
+					detail_bundes[i] = new DetailInfo(); // 객체배열 생성
 				}
+				for (int i = 0; i < detail_bundes.length; i++) {
+					detail_bundes[i].name = bundes.Team[i];
+					detail_bundes[i].coach = bundes.Coach[i];
+					detail_bundes[i].hometown = bundes.Hometown[i];
+					detail_bundes[i].previousrank = bundes.PreviousRank[i];
+					detail_bundes[i].play = bundes.makeplay();
+					detail_bundes[i].point = epl.makescore(detail_bundes[i].play);
+					detail_bundes[i].mompoint = epl.makeMomPoint();
+					detail_bundes[i].bestplayer = bundes.bestplayer[i];
+				}
+				int bundesCount = 0;
+				List<DetailInfo> bundesSort = Arrays.asList(detail_bundes);
+				Collections.sort(bundesSort);
+
+				for (DetailInfo i : bundesSort) {
+					bundesCount++;
+					System.out.println(bundesCount + "위 " + i + " ");
+				}
+				System.out.println();
+
+				for (int i = 0; i < detail_bundes.length; i++) {
+					System.out.println(i + 1 + " : " + detail_bundes[i].name);
+				}
+
+				while (true) {
+					System.out.println();
+					System.out.println("팀을 선택하세요![종료:0 / 리그선택:77]");
+					teamnum = sc.nextInt();
+
+					if (teamnum > 0 && teamnum < 21) {
+						System.out.print("selected " + detail_bundes[teamnum - 1].name + "\r\n");
+						System.out.println(detail_bundes[teamnum - 1].allContent());
+					} else if (teamnum == 0) {
+						sc.close();
+						return;
+					} else if (teamnum == 77) {
+						break;
+
+					} else
+						System.out.println("다시 입력하세요");
+				}
+
 				break;
 
 //			
 //			
 			case 4:
-				HashMap<Integer, String> serie = new HashMap<>();
-				serie.put(1, "FC 인테르나치오날레 밀라노");
-				serie.put(2, "AC 밀란");
-				serie.put(3, "유벤투스 FC");
-				serie.put(4, "US 레체");
-				serie.put(5, "아탈란타 BC");
-				serie.put(6, "SSC 나폴리");
-				serie.put(7, "엘라스 베로나 FC");
-				serie.put(8, "ACF 피오렌티나");
-				serie.put(9, "볼로냐 FC 1909");
-				serie.put(10, "프로시노네 칼초");
-				serie.put(11, "토리노 FC");
-				serie.put(12, "SS 라치오");
-				serie.put(13, "US 사수올로 칼초");
-				serie.put(14, "몬차");
-				serie.put(15, "제노아 CFC");
-				serie.put(16, "스포티바 살레르니타나");
-				serie.put(17, "우디네세 칼초");
-				serie.put(18, "AS 로마");
-				serie.put(19, "칼리아리 칼초");
-				serie.put(20, "엠폴리 FC");
-
-//			serie.forEach((key, value) -> {
-//				System.out.println(key + " : " + value);
-//			});
-				System.out.println();
-				System.out.println("팀을 선택하세요!");
-				teamnum = sc.nextInt();
-				if (teamnum > 20) {
-					System.out.println("잘못 선택하셨습니다. 다시 선택해주세요");
-					teamnum = sc.nextInt();
-					System.out.print("selected " + serie.get(teamnum));
-				} else {
-					System.out.print("selected " + serie.get(teamnum));
+				DetailInfo[] detail_serie = new DetailInfo[20];
+				System.out.println(detail_serie.length);
+				for (int i = 0; i < detail_serie.length; i++) {
+					detail_serie[i] = new DetailInfo(); // 객체배열 생성
 				}
+				for (int i = 0; i < detail_serie.length; i++) {
+					detail_serie[i].name = serie.Teams[i];
+					detail_serie[i].coach = serie.Coach[i];
+					detail_serie[i].hometown = serie.Hometown[i];
+					detail_serie[i].previousrank = serie.PreviousRank[i];
+					detail_serie[i].play = epl.makeplay();
+					detail_serie[i].point = epl.makescore(detail_serie[i].play);
+					detail_serie[i].mompoint = epl.makeMomPoint();
+					detail_serie[i].bestplayer = serie.bestplayer[i];
+				}
+				int serieCount = 0;
+				List<DetailInfo> SerieSort = Arrays.asList(detail_serie);
+				Collections.sort(SerieSort);
+
+				for (DetailInfo i : SerieSort) {
+					serieCount++;
+					System.out.println(serieCount + "위 " + i + " ");
+				}
+				System.out.println();
+				for (int i = 0; i < detail_serie.length; i++) {
+					System.out.println(i + 1 + " : " + detail_serie[i].name);
+				}
+				while (true) {
+					System.out.println();
+					System.out.println("팀을 선택하세요![종료:0 / 리그선택:77]");
+					teamnum = sc.nextInt();
+
+					if (teamnum > 0 && teamnum < 20) {
+						System.out.print("selected " + detail_serie[teamnum - 1].name + "\r\n");
+						System.out.println(detail_serie[teamnum - 1].allContent());
+					} else if (teamnum == 0) {
+						sc.close();
+						return;
+					} else if (teamnum == 77) {
+						break;
+
+					} else
+						System.out.println("다시 입력하세요");
+				}
+
 				break;
 
 //			
 			case 5:
-				HashMap<Integer, String> ligue1 = new HashMap<>();
-				ligue1.put(1, "AS 모나코 FC");
-				ligue1.put(2, "파리 생제르맹 FC");//
-				ligue1.put(3, "올랭피크 드 마르세유");
-				ligue1.put(4, "스타드 랭스");
-				ligue1.put(5, "릴 OSC");
-				ligue1.put(6, "스타드 브레스투아 29");
-				ligue1.put(7, "스타드 렌 FC");
-				ligue1.put(8, "OGC 니스");
-				ligue1.put(9, "RC 스트라스부르 알자스");
-				ligue1.put(10, "르아브르 AC");
-				ligue1.put(11, "FC 로리앙");
-				ligue1.put(12, "툴루즈 FC");
-				ligue1.put(13, "FC 메스");
-				ligue1.put(14, "몽펠리에 에로 SC");
-				ligue1.put(15, "FC 낭트");
-				ligue1.put(16, "클레르몽");
-				ligue1.put(17, "RC 랑스");
-				ligue1.put(18, "올랭피크 리옹");
-
-//			ligue1.forEach((key, value) -> {
-//				System.out.println(key + " : " + value);
-//			});
-				System.out.println();
-				System.out.println("팀을 선택하세요!");
-				teamnum = sc.nextInt();
-				if (teamnum > 18) {
-					System.out.println("잘못 선택하셨습니다. 다시 선택해주세요");
-					teamnum = sc.nextInt();
-					System.out.print("selected " + ligue1.get(teamnum));
-				} else {
-					System.out.print("selected " + ligue1.get(teamnum));
+				DetailInfo[] detail_ligue1 = new DetailInfo[18];
+				System.out.println(detail_ligue1.length);
+				for (int i = 0; i < detail_ligue1.length; i++) {
+					detail_ligue1[i] = new DetailInfo(); // 객체배열 생성
 				}
+				for (int i = 0; i < detail_ligue1.length; i++) {
+					detail_ligue1[i].name = ligue1.Teams[i];
+					detail_ligue1[i].coach = ligue1.Coach[i];
+					detail_ligue1[i].hometown = ligue1.Hometown[i];
+					detail_ligue1[i].previousrank = ligue1.PreviousRank[i];
+					detail_ligue1[i].play = epl.makeplay();
+					detail_ligue1[i].point = epl.makescore(detail_ligue1[i].play);
+					detail_ligue1[i].mompoint = epl.makeMomPoint();
+					detail_ligue1[i].bestplayer = ligue1.bestplayer[i];
+				}
+
+				int ligue1Count = 0;
+				List<DetailInfo> Ligue1Sort = Arrays.asList(detail_ligue1);
+				Collections.sort(Ligue1Sort);
+
+				for (DetailInfo i : Ligue1Sort) {
+					ligue1Count++;
+					System.out.println(ligue1Count + "위 " + i + " ");
+				}
+				System.out.println();
+				for (int i = 0; i < detail_ligue1.length; i++) {
+					System.out.println(i + 1 + " : " + detail_ligue1[i].name);
+				}
+				while (true) {
+					System.out.println();
+					System.out.println("팀을 선택하세요![종료:0 / 리그선택:77]");
+					teamnum = sc.nextInt();
+
+					if (teamnum > 0 && teamnum < 19) {
+						System.out.print("selected " + detail_ligue1[teamnum - 1].name + "\r\n");
+						System.out.println(detail_ligue1[teamnum - 1].allContent());
+					} else if (teamnum == 0) {
+						sc.close();
+						return;
+					} else if (teamnum == 77) {
+						break;
+
+					} else
+						System.out.println("다시 입력하세요");
+				}
+
 				break;
 
 			}
 		}
-
-//	}
-
-//	public void setNum(int num) {
-//		this.num = num;
-//	}
 
 	}
 }

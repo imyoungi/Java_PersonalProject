@@ -7,6 +7,11 @@ public class Bundesinfo {
 	static Random random = new Random();
 	DetailInfo detail_bundes = new DetailInfo();
 	Simplefotmob simplefm = new Simplefotmob();
+	
+	int makeplay() {
+		int play = (int) (Math.random() * 36) + 1;
+		return play;
+	}
 
 	public String[] Team = { "Darmstadt ", "Dortmund", "Leipzig e.V", "Leverkusen ", "Mainz 05", "Mönchengladbach ",
 			"바이에른", "Bochum", "Wolfsburg", "Werder", "Stuttgart ", "Augsburg", "UnionBerlin", "Köln ", "Freiburg",

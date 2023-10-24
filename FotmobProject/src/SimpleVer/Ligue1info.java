@@ -1,11 +1,20 @@
 package SimpleVer;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class Ligue1info {
 	static Random random = new Random();
 	DetailInfo detail_ligue1 = new DetailInfo();
 	Simplefotmob simplefm = new Simplefotmob();
+	
+	void showrank_ligue1() {
+		
+		
+	}
+	
 
 	public String[] Teams = { "AS MONACO", "BRESTSTADE BRESTOIS 29", "CLERMONTCLERMONT FOOT 63", "FC LORIENTFC LORIENT",
 			"FC METZFC METZ", "FC NANTESFC NANTES", "HAVRE ACHAVRE ATHLETIC CLUB", "LOSCLOSC LILLE",

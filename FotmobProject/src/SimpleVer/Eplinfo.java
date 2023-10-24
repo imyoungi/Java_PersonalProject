@@ -18,12 +18,12 @@ public class Eplinfo {
 
 	}
 
-	int epl_makeplay() {
+	int makeplay() {
 		int play = (int) (Math.random() * 38) + 1;
 		return play;
 	}
 
-	public int epl_makescore(int play) { // 승리(3), 무승부(1), 패(0)
+	public int makescore(int play) { // 승리(3), 무승부(1), 패(0)
 		int count = 0;
 
 		for (int i = 0; i < play; i++) {
@@ -84,7 +84,7 @@ public class Eplinfo {
 
 	static String[] Member_WestHam = { "파비안스키", "리드", "크레스웰", "발부에나", "사발레타", "스카마카", "펠리피 안데르송", "에르난데스", "란시니",
 			"스노드그래스", "아드리안", "오비앙", "산체스", "노블", "윌셔", "오그본나", "디옵", "프레더릭스", "마쉬아퀴", "안토니오", "쿨렌", "트로트", "옥스포드",
-			"홀랜드", "파스크", "라이스", };
+			"맷 홀랜드", "파스크", "라이스", };
 
 	static String[] Member_Brighton = { "바르트 페르브뤼헌", "타리크 램프티", "이고르 줄리우", "아담 웹스터", "루이스 덩크 ", "제임스 밀너", "솔리 마치",
 			"마흐무드 다후드", "주앙 페드루", "훌리오 엔시소", "빌리 길모어", "파스칼 그로스 ", "애덤 럴라나", "야쿠프 모더", "스테벤 알자테", "대니 웰벡", "안디 제키리",

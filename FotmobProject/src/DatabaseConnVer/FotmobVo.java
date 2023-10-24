@@ -1,6 +1,6 @@
 package DatabaseConnVer;
 
-public class FotmobVo implements Comparable<FotmobVo> {
+public class FotmobVo implements Comparable<FotmobVo> { 
 	int leagueid;
 	String name;
 	String coach;
