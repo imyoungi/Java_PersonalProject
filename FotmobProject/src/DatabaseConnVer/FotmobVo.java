@@ -1,6 +1,7 @@
 package DatabaseConnVer;
 
-public class FotmobVo implements Comparable<FotmobVo> { 
+public class FotmobVo implements Comparable<FotmobVo> {
+	int no;
 	int leagueid;
 	String name;
 	String coach;
@@ -15,8 +16,8 @@ public class FotmobVo implements Comparable<FotmobVo> {
 
 	}
 
-	public FotmobVo(String name, String coach, String hometown, String bestplayer, int point,
-			String previousrank, double mompoint, int play, int leagueid) {
+	public FotmobVo(String name, String coach, String hometown, String bestplayer, int point, String previousrank,
+			double mompoint, int play, int leagueid) {
 		super();
 		this.name = name;
 		this.coach = coach;
@@ -28,9 +29,9 @@ public class FotmobVo implements Comparable<FotmobVo> {
 		this.play = play;
 		this.leagueid = leagueid;
 	}
-	
-	public FotmobVo(String name, String coach, String hometown, String bestplayer, int point,
-			String previousrank, double mompoint, int play) {
+
+	public FotmobVo(String name, String coach, String hometown, String bestplayer, int point, String previousrank,
+			double mompoint, int play) {
 		super();
 		this.name = name;
 		this.coach = coach;
@@ -42,6 +43,22 @@ public class FotmobVo implements Comparable<FotmobVo> {
 		this.play = play;
 	}
 
+	public FotmobVo(int point, int play, String bestplayer, double mompoint, int no) {
+		super();
+		this.no = no;
+		this.bestplayer = bestplayer;
+		this.point = point;
+		this.mompoint = mompoint;
+		this.play = play;
+	}
+
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
+	}
 
 	public int getLeagueid() {
 		return leagueid;

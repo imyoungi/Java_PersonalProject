@@ -37,7 +37,7 @@ public class Eplinfo {
 
 	}
 
-	void selectMenu() {
+	public void selectMenu() {
 		String[] menu = { "1. Premier League", "2. LaLiga", "3. Bundesligga", "4. SerieA", "5. Ligue 1" };
 		for (int i = 0; i < menu.length; i++) {
 			System.out.println(menu[i]);

@@ -134,7 +134,8 @@ public class DetailInfo implements Comparable<DetailInfo> {
 	}
 
 	public String allContent() {
-		return name + " [" + "played(경기수)=" + play+ ", points=" + point + ", coach=" + coach + ", hometown=" + hometown + ", bestplayer(평점)="
+		return name + "\r\n"+
+	" [" + "played(경기수)=" + play+ ", points=" + point + ", coach=" + coach + ", hometown=" + hometown + ", bestplayer(평점)="
 				+ bestplayer + "(" + mompoint + ")" + ", previousrank=" + previousrank + "]";
 	}
 
