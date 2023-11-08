@@ -1,20 +1,32 @@
+
 package DatabaseConnVer;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import SimpleVer.Eplinfo;
 
 public class FotmobMain {
 
 	static int rank = 0;
+	static ArrayList<String> list = new ArrayList<>();
+
+	
 	Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		JdbcTemplate jdbcTemplate = new JdbcTemplate();
 		FotmobDAO dao = new FotmobDAO(jdbcTemplate);
 		Eplinfo epl = new Eplinfo();
+		CrawlingVo craw = new CrawlingVo();
 
 		System.out.println("- SIMPLE FOTMOB PROGRAM(DBVer) -" + "\r\n");
 		Scanner sc = new Scanner(System.in);
@@ -249,17 +261,17 @@ public class FotmobMain {
 					}
 
 				} else if (mnum == 2) {
-//					List<FotmobVo> data = dao.updateScore(tnum, tnum, null, tnum, tnum);
-					
-					Scanner sc2 = new Scanner(System.in);
-					int point = sc2.nextInt();
-					int play = sc2.nextInt();
-					String bestplayer = sc2.next();
-					Double mompoint = sc2.nextDouble();
-					int no = sc2.nextInt();
-					
-					dao.updateScore(point, play, bestplayer, mompoint, no);
-//					System.out.println("No "+no+"update 완료");
+
+			//팀
+//						경기
+//						승
+//						무
+//						패
+//						득점
+//						실점
+//						득실차
+//						승점
+					}
 					
 
 				}
@@ -322,4 +334,3 @@ public class FotmobMain {
 //		list = ss.ListAll(); // dao가 아닌 service사용 
 
 	}
-}
